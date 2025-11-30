@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UTM System</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Локальный Leaflet CSS -->
+    <link rel="stylesheet" href="/static/css/leaflet.css"/>
+    <script src="/static/js/leaflet.js">
+</script>
+</head>
+<body>
+    <h1>UTM System</h1>
+    
+    <h2>Регистрация дрона</h2>
+    <form id="droneForm">
+        <input type="text" name="brand" placeholder="Марка" required><br>
+        <input type="text" name="model" placeholder="Модель" required><br>
+        <input type="text" name="serial" placeholder="Серийный номер" required><br>
+        <button type="submit">Зарегистрировать дрон</button>
+    </form>
+
+    <h2>Регистрация пилота</h2>
+    <form id="pilotForm">
+        <input type="text" name="name" placeholder="ФИО" required><br>
+        <input type="text" name="contact" placeholder="Контакты" required><br>
+        <button type="submit">Зарегистрировать пилота</button>
+    </form>
+
+    <h2>Подача заявки на полёт</h2>
+    <form id="flightForm">
+        <input type="number" name="drone_id" placeholder="ID дрона" required><br>
+        <input type="number" name="pilot_id" placeholder="ID пилота" required><br>
+        <div>
+            <label>Маршрут (кликните на карте для добавления точек):</label><br>
+            <div id="map"></div>
+            <input type="hidden" name="route" id="routeInput" required>
+            <button type="button" id="clearRoute">Очистить маршрут</button>
+        </div>
+        <input type="number" name="altitude" placeholder="Высота (м)" required><br>
+        <input type="text" name="time" placeholder="Время полёта" required><br>
+        <button type="submit">Подать заявку</button>
+    </form>
+
+    <a href="/monitor">Перейти к мониторингу</a>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Локальный Leaflet JS -->
+    <script src="/static/js/leaflet.js"></script>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

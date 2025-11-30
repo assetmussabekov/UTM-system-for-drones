@@ -1,0 +1,5 @@
+flask==2.0.1
+flask-socketio==5.1.1
+folium==0.12.1
+geopy==2.2.0
+werkzeug==2.0.3
